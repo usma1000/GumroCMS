@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Contacts</h1>
 
-<%= form_tag(contacts_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Contacts" %>
-  <%= submit_tag "Search" %>
+<%= form_tag(contacts_path, :method => "get", id: "search-form", class: 'form-inline') do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Contacts", class: 'form-control' %>
+  <%= submit_tag "Search", class: 'btn btn-default' %>
 <% end %>
 
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -22,13 +20,16 @@
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
-        <td><%= contact.name %></td>
+        <td><%= link_to contact.name, contact %></td>
         <td><%= contact.email %></td>
         <td><%= contact.phone %></td>
         <td><%= contact.title %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="btn-group" role="group" aria-label="...">
+            <%= link_to 'Edit', edit_contact_path(contact), class: 'btn btn-default' %>
+            <%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this carrier?' }, class: 'btn btn-danger' %>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Contact', new_contact_path %>
+<%= link_to 'New Contact', new_contact_path, class: 'btn btn-primary' %>

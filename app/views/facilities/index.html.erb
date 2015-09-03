@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Facilities</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Address</th>
@@ -15,12 +13,15 @@
   <tbody>
     <% @facilities.each do |facility| %>
       <tr>
-        <td><%= facility.address %></td>
+        <td><%= link_to facility.address, facility %></td>
         <td><%= facility.city %></td>
         <td><%= facility.state %></td>
-        <td><%= link_to 'Show', facility %></td>
-        <td><%= link_to 'Edit', edit_facility_path(facility) %></td>
-        <td><%= link_to 'Destroy', facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="btn-group" role="group" aria-label="...">
+            <%= link_to 'Edit', edit_facility_path(facility), class: 'btn btn-default' %>
+            <%= link_to 'Destroy', facility, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this facility?' }, class: 'btn btn-danger' %>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Facility', new_facility_path %>
+<%= link_to 'New Facility', new_facility_path, class: 'btn btn-primary' %>
