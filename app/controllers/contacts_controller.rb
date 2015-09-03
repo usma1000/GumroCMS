@@ -21,10 +21,12 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    @carriers = Carrier.all
   end
 
   # GET /contacts/1/edit
   def edit
+    @carriers = Carrier.all
   end
 
   # POST /contacts
@@ -75,6 +77,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:name, :email, :phone, :title)
+      params.require(:contact).permit(:name, :email, :phone, :title, :carrier_id)
     end
 end
