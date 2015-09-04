@@ -1,4 +1,9 @@
-<h1>Listing Carriers</h1>
+<h1>Carriers</h1>
+
+<%= form_tag(carriers_path, :method => "get", id: "search-form", class: 'form-inline') do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Contacts", class: 'form-control' %>
+  <%= submit_tag "Search", class: 'btn btn-default' %>
+<% end %>
 
 <table class="table">
   <thead>
