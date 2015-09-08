@@ -6,6 +6,12 @@ class FacilitiesController < ApplicationController
   # GET /facilities.json
   def index
     @facilities = Facility.all
+
+    if params[:search]
+      @facilites = Facility.search(params[:search])
+    else
+      @facilities = Facility.all
+    end
   end
 
   # GET /facilities/1

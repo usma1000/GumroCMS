@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150903181838) do
+ActiveRecord::Schema.define(version: 20150908174322) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
@@ -35,9 +35,36 @@ ActiveRecord::Schema.define(version: 20150903181838) do
     t.string   "address"
     t.string   "city"
     t.string   "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "carriers_id"
+    t.boolean  "has_security"
+    t.boolean  "has_CCTV"
+    t.boolean  "has_fence"
+    t.boolean  "has_sprinklers"
+    t.boolean  "has_fire_alarm"
+    t.boolean  "has_burglar_alarm"
+    t.boolean  "has_drop_yard"
+    t.integer  "terminal_door_count"
+    t.integer  "hours_of_operation"
+    t.boolean  "has_GPS"
+    t.boolean  "has_alternate_fuel"
+    t.boolean  "has_standard_equipment_types"
+    t.integer  "average_equipment_age"
+    t.boolean  "drivers_are_screened"
+    t.boolean  "has_high_driver_turnover"
+    t.boolean  "holds_driver_training"
+    t.integer  "average_theft_rate"
+    t.integer  "vehicle_count_24"
+    t.integer  "vehicle_count_26"
+    t.integer  "vehicle_count_48"
+    t.integer  "vehicle_count_53"
+    t.integer  "vehicle_count_sprinter_vans"
+    t.integer  "vehicle_count_flat_beds"
+    t.integer  "vehicle_count_reefers"
   end
+
+  add_index "facilities", ["carriers_id"], name: "index_facilities_on_carriers_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
