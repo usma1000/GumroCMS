@@ -1,7 +1,7 @@
-<h1>Gumro Carrier Management System</h1>
+<h1>G&amp;A Carrier Management System</h1>
 
 <% if user_signed_in? %>
-  <p>Choose Carriers, Facilities, or Contacts to get started.</p>
+  <p>Choose <%= link_to 'Carriers', carriers_path =%>, <%= link_to 'Contacts', contacts_path =%>, or <%= link_to 'Facilities', facilities_path =%> to get started.</p>
 <% else %>
-  <p>Please log in or sign up.</p>
+  <p>Please <%= link_to 'Log In', new_user_session_path =%> or <%= link_to 'Sign Up', new_user_registration_path =%>.</p>
 <% end %>
