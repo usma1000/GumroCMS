@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150908174322) do
+ActiveRecord::Schema.define(version: 20150908201644) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150908174322) do
     t.string   "state"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.integer  "carriers_id"
+    t.integer  "carrier_id"
     t.boolean  "has_security"
     t.boolean  "has_CCTV"
     t.boolean  "has_fence"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20150908174322) do
     t.integer  "vehicle_count_reefers"
   end
 
-  add_index "facilities", ["carriers_id"], name: "index_facilities_on_carriers_id"
+  add_index "facilities", ["carrier_id"], name: "index_facilities_on_carrier_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

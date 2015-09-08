@@ -18,5 +18,10 @@
   <%= @contact.title %>
 </p>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<p>
+  <strong>Carrier:</strong>
+  <%= @contact.carrier.name %>
+</p>
+
+<%= link_to 'Edit', edit_contact_path(@contact), class: 'btn btn-default' %>
+<%= link_to 'Back', contacts_path, class: 'btn btn-default' %>

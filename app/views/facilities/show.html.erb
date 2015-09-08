@@ -13,5 +13,10 @@
   <%= @facility.state %>
 </p>
 
-<%= link_to 'Edit', edit_facility_path(@facility) %> |
-<%= link_to 'Back', facilities_path %>
+<p>
+  <strong>Carrier:</strong>
+  <%= @facility.carrier.name %>
+</p>
+
+<%= link_to 'Edit', edit_facility_path(@facility), class: 'btn btn-default' %>
+<%= link_to 'Back', facilities_path, class: 'btn btn-default' %>

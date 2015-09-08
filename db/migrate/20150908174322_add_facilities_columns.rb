@@ -1,6 +1,6 @@
 class AddFacilitiesColumns < ActiveRecord::Migration
   def change
-    add_reference :facilities, :carriers, index: true, foreign_key: true
+    add_reference :facilities, :carrier, index: true, foreign_key: true
     add_column :facilities, :has_security, :boolean
     add_column :facilities, :has_CCTV, :boolean
     add_column :facilities, :has_fence, :boolean

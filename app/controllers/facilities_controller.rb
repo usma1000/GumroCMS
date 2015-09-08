@@ -17,15 +17,18 @@ class FacilitiesController < ApplicationController
   # GET /facilities/1
   # GET /facilities/1.json
   def show
+    @carriers = Carrier.all
   end
 
   # GET /facilities/new
   def new
     @facility = Facility.new
+    @carriers = Carrier.all
   end
 
   # GET /facilities/1/edit
   def edit
+    @carriers = Carrier.all
   end
 
   # POST /facilities
@@ -76,6 +79,6 @@ class FacilitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def facility_params
-      params.require(:facility).permit(:address, :city, :state)
+      params.require(:facility).permit(:address, :city, :state, :carrier_id)
     end
 end
