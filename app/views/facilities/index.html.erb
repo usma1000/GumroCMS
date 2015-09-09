@@ -14,38 +14,23 @@
         <%= submit_tag "Search", class: 'btn btn-default' %>
       <% end %>
     </div>
+    <div class="col-sm-4">
+      <%= link_to 'New Facility', new_facility_path, class: 'btn btn-primary pull-right' %>
+    </div>
   </div>
 </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Carrier</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @facilities.each do |facility| %>
-      <tr>
-        <td><%= link_to facility.address, facility %></td>
-        <td><%= facility.city %></td>
-        <td><%= facility.state %></td>
-        <td><%= facility.carrier.name %></td>
-        <td>
-          <div class="btn-group" role="group" aria-label="...">
-            <%= link_to 'Edit', edit_facility_path(facility), class: 'btn btn-default' %>
-            <%= link_to 'Delete', facility, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this facility?' }, class: 'btn btn-danger' %>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Facility', new_facility_path, class: 'btn btn-primary' %>
+<% @facilities.each do |facility| %>
+  <div class="card">
+    <div class="content">
+      <span class="title"><%= link_to facility.carrier.name, facility %></span>
+      <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= facility.address %>, <%= facility.city %>, <%= facility.state %></p>
+    </div>
+    <div class="action">
+      <div class="btn-group" role="group" aria-label="...">
+        <%= link_to 'Edit', edit_facility_path(facility), class: 'btn btn-default' %>
+        <%= link_to 'Delete', facility, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this facility?' }, class: 'btn btn-danger' %>
+      </div>
+    </div>
+  </div>
+<% end %>
