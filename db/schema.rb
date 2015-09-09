@@ -11,12 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909174152) do
+ActiveRecord::Schema.define(version: 20150909192200) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "exp_in_retail"
+    t.boolean  "exp_in_intl_cargo"
+    t.boolean  "exp_in_garments_on_hangars"
+    t.boolean  "exp_in_noncommercial_goods"
+    t.boolean  "exp_in_replenishment"
+    t.boolean  "exp_in_shop_returns"
+    t.boolean  "two_year_contract"
+    t.boolean  "operate_year_round"
+    t.boolean  "operate_twentyfour_hours"
+    t.boolean  "handle_cosmetic_products"
+    t.boolean  "accept_payment_in_thirty_days"
+    t.string   "comments"
   end
 
   create_table "contacts", force: :cascade do |t|
