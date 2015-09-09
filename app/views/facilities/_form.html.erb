@@ -11,23 +11,147 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Location</h3>
+    </div>
+    <div class="panel-body">
+      <div class="field">
+        <%= f.label :carrier %><br>
+        <%= f.select :carrier_id, options_for_select(@carriers.map{ |s| [s.name, s.id] }, params[:carrier_id]) %>
+      </div>
+      <div class="field">
+        <%= f.label :address %><br>
+        <%= f.text_field :address %>
+      </div>
+      <div class="field">
+        <%= f.label :city %><br>
+        <%= f.text_field :city %>
+      </div>
+      <div class="field">
+        <%= f.label :state %><br>
+        <%= f.text_field :state %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Facility</h3>
+    </div>
+    <div class="panel-body">
+      <div class="field">
+        <%= f.check_box :has_security %> <strong>Has Security</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :has_CCTV %> <strong>Has CCTV</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :has_fence %> <strong>Has Fence</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :has_sprinklers %> <strong>Has Sprinklers</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :has_fire_alarm %> <strong>Has Fire Alarm</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :has_burglar_alarm %> <strong>Has Burglar Alarm</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :has_drop_yard %> <strong>Has Drop Yard</strong>
+      </div>
+      <div class="field">
+        <%= f.label :terminal_door_count %><br>
+        <%= f.number_field :terminal_door_count %>
+      </div>
+      <div class="field">
+        <%= f.label :hours_of_operation %><br>
+        <%= f.text_field :hours_of_operation %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Equipment</h3>
+    </div>
+    <div class="panel-body">
+      <div class="field">
+        <%= f.check_box :has_GPS %> <strong>Has GPS</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :has_alternate_fuel %> <strong>Has Alternate Fuel</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :has_standard_equipment_types %> <strong>Has Standard Equipment Types</strong>
+      </div>
+      <div class="field">
+        <%= f.label :average_equipment_age %><br>
+        <%= f.number_field :average_equipment_age %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :carrier %><br>
-    <%= f.select :carrier_id, options_for_select(@carriers.map{ |s| [s.name, s.id] }, params[:carrier_id]) %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Drivers</h3>
+    </div>
+    <div class="panel-body">
+      <div class="field">
+        <%= f.check_box :drivers_are_screened %> <strong>Drivers Are Screened</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :has_high_driver_turnover %> <strong>Has High Driver Turnover</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :holds_driver_training %> <strong>Holds Driver Training</strong>
+      </div>
+      <div class="field">
+        <%= f.label :average_theft_rate %> %<br>
+        <%= f.number_field :average_theft_rate %>
+      </div>
+    </div>
   </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Vehicle Counts</h3>
+    </div>
+    <div class="panel-body">
+      <div class="field">
+        <strong>24'</strong><br>
+        <%= f.number_field :vehicle_count_24 %>
+      </div>
+      <div class="field">
+        <strong>26'</strong><br>
+        <%= f.number_field :vehicle_count_26 %>
+      </div>
+      <div class="field">
+        <strong>48'</strong><br>
+        <%= f.number_field :vehicle_count_48 %>
+      </div>
+      <div class="field">
+        <strong>53'</strong><br>
+        <%= f.number_field :vehicle_count_53 %>
+      </div>
+      <div class="field">
+        <strong>Sprinter Vans</strong><br>
+        <%= f.number_field :vehicle_count_sprinter_vans %>
+      </div>
+      <div class="field">
+        <strong>Flat Beds</strong><br>
+        <%= f.number_field :vehicle_count_flat_beds %>
+      </div>
+      <div class="field">
+        <strong>Reefers</strong><br>
+        <%= f.number_field :vehicle_count_reefers %>
+      </div>
+    </div>
+  </div>
+
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
   </div>
 <% end %>

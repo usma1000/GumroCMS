@@ -85,6 +85,6 @@ class FacilitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def facility_params
-      params.require(:facility).permit(:address, :city, :state, :carrier_id)
+      params.require(:facility).permit(:address, :city, :state, :carrier_id, :has_security, :has_CCTV, :has_fence, :has_sprinklers, :has_fire_alarm, :has_burglar_alarm, :has_drop_yard, :terminal_door_count, :hours_of_operation, :has_GPS, :has_alternate_fuel, :has_standard_equipment_types, :average_equipment_age, :drivers_are_screened, :has_high_driver_turnover, :holds_driver_training, :average_theft_rate, :vehicle_count_24, :vehicle_count_26, :vehicle_count_48, :vehicle_count_53, :vehicle_count_sprinter_vans, :vehicle_count_flat_beds, :vehicle_count_reefers)
     end
 end
