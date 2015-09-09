@@ -12,6 +12,12 @@ class FacilitiesController < ApplicationController
     else
       @facilities = Facility.all
     end
+
+    if params[:searchState]
+      @facilites = Facility.search(params[:searchState])
+    else
+      @facilities = Facility.all
+    end
   end
 
   # GET /facilities/1

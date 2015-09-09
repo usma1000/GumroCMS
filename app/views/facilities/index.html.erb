@@ -1,9 +1,21 @@
 <h1>Facilities</h1>
 
-<%= form_tag(facilities_path, :method => "get", id: "search-form", class: 'form-inline') do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Facilities", class: 'form-control' %>
-  <%= submit_tag "Search", class: 'btn btn-default' %>
-<% end %>
+<div class="well" style="margin: 40px 0;">
+  <div class="row">
+    <div class="col-sm-4">
+      <%= form_tag(facilities_path, :method => "get", id: "search-form", class: 'form-inline') do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Facilities", class: 'form-control' %>
+        <%= submit_tag "Search", class: 'btn btn-default' %>
+      <% end %>
+    </div>
+    <div class="col-sm-4">
+      <%= form_tag(facilities_path, :method => "get", id: "search-form", class: 'form-inline') do %>
+        <%= text_field_tag :searchState, params[:searchState], placeholder: "Search by State", class: 'form-control' %>
+        <%= submit_tag "Search", class: 'btn btn-default' %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <table class="table">
   <thead>
