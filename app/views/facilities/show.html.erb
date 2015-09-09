@@ -1,22 +1,178 @@
-<p>
-  <strong>Address:</strong>
-  <%= @facility.address %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Location</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Carrier:</strong>
+      <%= @facility.carrier.name %>
+    </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @facility.city %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @facility.address %>
+    </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @facility.state %>
-</p>
+    <p>
+      <strong>City:</strong>
+      <%= @facility.city %>
+    </p>
 
-<p>
-  <strong>Carrier:</strong>
-  <%= @facility.carrier.name %>
-</p>
+    <p>
+      <strong>State:</strong>
+      <%= @facility.state %>
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Facility</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Has Security:</strong>
+      <%= boolean_yesno(@facility.has_security) %>
+    </p>
+
+    <p>
+      <strong>Has CCTV:</strong>
+      <%= boolean_yesno(@facility.has_CCTV) %>
+    </p>
+
+    <p>
+      <strong>Has Fence:</strong>
+      <%= boolean_yesno(@facility.has_fence) %>
+    </p>
+
+    <p>
+      <strong>Has Sprinklers:</strong>
+      <%= boolean_yesno(@facility.has_sprinklers) %>
+    </p>
+
+    <p>
+      <strong>Has Fire Alarm:</strong>
+      <%= boolean_yesno(@facility.has_fire_alarm) %>
+    </p>
+
+    <p>
+      <strong>Has Burglar Alarm:</strong>
+      <%= boolean_yesno(@facility.has_burglar_alarm) %>
+    </p>
+
+    <p>
+      <strong>Has Drop Yard:</strong>
+      <%= boolean_yesno(@facility.has_drop_yard) %>
+    </p>
+
+    <p>
+      <strong>Terminal Door Count:</strong>
+      <%= @facility.terminal_door_count %>
+    </p>
+
+    <p>
+      <strong>Hours of Operation:</strong>
+      <%= @facility.hours_of_operation %>
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Equipment</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Has GPS:</strong>
+      <%= boolean_yesno(@facility.has_GPS) %>
+    </p>
+
+    <p>
+      <strong>Has Alternate Fuel:</strong>
+      <%= boolean_yesno(@facility.has_alternate_fuel) %>
+    </p>
+
+    <p>
+      <strong>Has Standard Equipment Types:</strong>
+      <%= boolean_yesno(@facility.has_standard_equipment_types) %>
+    </p>
+
+    <p>
+      <strong>Average Equipment Age:</strong>
+      <%= @facility.average_equipment_age %>
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Equipment</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Drivers Are Screened:</strong>
+      <%= boolean_yesno(@facility.drivers_are_screened) %>
+    </p>
+
+    <p>
+      <strong>Has High Driver Turnover:</strong>
+      <%= boolean_yesno(@facility.has_high_driver_turnover) %>
+    </p>
+
+    <p>
+      <strong>Holds Driver Training:</strong>
+      <%= boolean_yesno(@facility.holds_driver_training) %>
+    </p>
+
+    <p>
+      <strong>Average Theft Rate:</strong>
+      <%= @facility.average_theft_rate %>
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Equipment</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Vehicle Count - 24':</strong>
+      <%= @facility.vehicle_count_24 %>
+    </p>
+
+    <p>
+      <strong>Vehicle Count - 26':</strong>
+      <%= @facility.vehicle_count_26 %>
+    </p>
+
+    <p>
+      <strong>Vehicle Count - 48':</strong>
+      <%= @facility.vehicle_count_48 %>
+    </p>
+
+    <p>
+      <strong>Vehicle Count - 53':</strong>
+      <%= @facility.vehicle_count_53 %>
+    </p>
+
+    <p>
+      <strong>Vehicle Count - Sprinter Vans:</strong>
+      <%= @facility.vehicle_count_sprinter_vans %>
+    </p>
+
+    <p>
+      <strong>Vehicle Count - Flat Beds:</strong>
+      <%= @facility.vehicle_count_flat_beds %>
+    </p>
+
+    <p>
+      <strong>Vehicle Count - Reefers:</strong>
+      <%= @facility.vehicle_count_reefers %>
+    </p>
+  </div>
+</div>
+
 
 <%= link_to 'Edit', edit_facility_path(@facility), class: 'btn btn-default' %>
 <%= link_to 'Back', facilities_path, class: 'btn btn-default' %>

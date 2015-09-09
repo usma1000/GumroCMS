@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150908201644) do
+ActiveRecord::Schema.define(version: 20150909174152) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20150908201644) do
     t.boolean  "has_burglar_alarm"
     t.boolean  "has_drop_yard"
     t.integer  "terminal_door_count"
-    t.integer  "hours_of_operation"
+    t.string   "hours_of_operation"
     t.boolean  "has_GPS"
     t.boolean  "has_alternate_fuel"
     t.boolean  "has_standard_equipment_types"
