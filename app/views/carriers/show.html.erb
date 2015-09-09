@@ -1,7 +1,85 @@
-<p>
-  <strong>Name:</strong>
-  <%= @carrier.name %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Location</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Name:</strong>
+      <%= @carrier.name %>
+    </p>
+  </div>
+</div>
 
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Experience In</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Retail:</strong>
+      <%= boolean_yesno(@carrier.exp_in_retail) %>
+    </p>
+    <p>
+      <strong>Receiving International Cargo:</strong>
+      <%= boolean_yesno(@carrier.exp_in_intl_cargo) %>
+    </p>
+    <p>
+      <strong>Receiving of Garments on Hangers:</strong>
+      <%= boolean_yesno(@carrier.exp_in_garments_on_hangars) %>
+    </p>
+    <p>
+      <strong>Receiving of Non-Commercial Goods:</strong>
+      <%= boolean_yesno(@carrier.exp_in_noncommercial_goods) %>
+    </p>
+    <p>
+      <strong>Allocation to Stores or Warehouses' Replenishment Section:</strong>
+      <%= boolean_yesno(@carrier.exp_in_replenishment) %>
+    </p>
+    <p>
+      <strong>Handling of Shop Returns:</strong>
+      <%= boolean_yesno(@carrier.exp_in_shop_returns) %>
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">General Operations</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Ability To Agree On A Two Year Contract:</strong>
+      <%= boolean_yesno(@carrier.two_year_contract) %>
+    </p>
+    <p>
+      <strong>Ability To Operate 7 Days A Week And On Bank Holidays:</strong>
+      <%= boolean_yesno(@carrier.operate_year_round) %>
+    </p>
+    <p>
+      <strong>Ability To Operate 24h A Day:</strong>
+      <%= boolean_yesno(@carrier.operate_twentyfour_hours) %>
+    </p>
+    <p>
+      <strong>Ability To Handle Cosmetic Products:</strong>
+      <%= boolean_yesno(@carrier.handle_cosmetic_products) %>
+    </p>
+    <p>
+      <strong>Accept 30 Day Payment Terms:</strong>
+      <%= boolean_yesno(@carrier.accept_payment_in_thirty_days) %>
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Additional Info</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Comments:</strong>
+      <%= @carrier.comments %>
+    </p>
+  </div>
+</div>
 <%= link_to 'Edit', edit_carrier_path(@carrier), class: 'btn btn-default' %>
 <%= link_to 'Back', carriers_path, class: 'btn btn-default' %>

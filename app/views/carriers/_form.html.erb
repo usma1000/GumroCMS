@@ -11,11 +11,80 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Name</h3>
+    </div>
+    <div class="panel-body">
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+    </div>
   </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Experience In</h3>
+    </div>
+    <div class="panel-body">
+      <div class="field">
+        <%= f.check_box :exp_in_retail %> <strong>Retail</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :exp_in_intl_cargo %> <strong>Receiving International Cargo</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :exp_in_garments_on_hangars %> <strong>Receiving of Garments on Hangers</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :exp_in_noncommercial_goods %> <strong>Receiving of Non-Commercial Goods</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :exp_in_replenishment %> <strong>Allocation to Stores or Warehouses' Replenishment Section</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :exp_in_shop_returns %> <strong>Handling of Shop Returns</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">General Operations</h3>
+    </div>
+    <div class="panel-body">
+      <div class="field">
+        <%= f.check_box :two_year_contract %> <strong>Ability To Agree On A Two Year Contract</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :operate_year_round %> <strong>Ability To Operate 7 Days A Week And On Bank Holidays</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :operate_twentyfour_hours %> <strong>Ability To Operate 24h A Day</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :handle_cosmetic_products %> <strong>Ability To Handle Cosmetic Products</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :accept_payment_in_thirty_days %> <strong>Accept 30 Day Payment Terms</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Additional Info</h3>
+    </div>
+    <div class="panel-body">
+      <div class="field">
+        <%= f.label :comments %><br>
+        <%= f.text_area :comments, :rows => "4", :cols => "50" %>
+      </div>
+    </div>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
   </div>
 <% end %>
