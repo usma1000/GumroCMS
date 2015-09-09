@@ -8,6 +8,9 @@
         <%= submit_tag "Search", class: 'btn btn-default' %>
       <% end %>
     </div>
+    <div class="col-sm-8">
+      <%= link_to 'New Contact', new_contact_path, class: 'btn btn-primary pull-right' %>
+    </div>
   </div>
 </div>
 
@@ -41,7 +44,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Contact', new_contact_path, class: 'btn btn-primary' %>
