@@ -14,33 +14,28 @@
   </div>
 </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Title</th>
-      <th>Carrier</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<% @contacts.each do |contact| %>
+  <div class="card">
+    <div class="content">
 
-  <tbody>
-    <% @contacts.each do |contact| %>
-      <tr>
-        <td><%= link_to contact.name, contact %></td>
-        <td><%= contact.email %></td>
-        <td><%= contact.phone %></td>
-        <td><%= contact.title %></td>
-        <td><%= contact.carrier.name %></td>
-        <td>
-          <div class="btn-group" role="group" aria-label="...">
-            <%= link_to 'Edit', edit_contact_path(contact), class: 'btn btn-default' %>
-            <%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this carrier?' }, class: 'btn btn-danger' %>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <!-- edit and delete buttons -->
+      <div class="btn-group pull-right" role="group" aria-label="...">
+        <%= link_to edit_contact_path(contact), class: 'btn btn-default' do %>
+          <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to contact, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this contact?' }, class: 'btn btn-danger' do %>
+          <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+        <% end %>
+      </div>
+
+      <span class="title"><%= link_to contact.name, contact %></span>
+      <p><strong><%= contact.title %></strong></p>
+      <p><%= contact.carrier.name %></p>
+      <hr>
+      <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <%= contact.email %></p>
+      <a href= "tel:<%= contact.phone %>" class="phone-links">
+        <p><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <%= contact.phone %></p>
+      </a>
+    </div>
+  </div>
+<% end %>

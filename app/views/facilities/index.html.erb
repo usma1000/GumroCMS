@@ -23,14 +23,19 @@
 <% @facilities.each do |facility| %>
   <div class="card">
     <div class="content">
+
+      <!-- edit and delete buttons -->
+      <div class="btn-group pull-right" role="group" aria-label="...">
+        <%= link_to edit_facility_path(facility), class: 'btn btn-default' do %>
+          <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to facility, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this facility?' }, class: 'btn btn-danger' do %>
+          <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+        <% end %>
+      </div>
+
       <span class="title"><%= link_to facility.carrier.name, facility %></span>
       <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= facility.address %>, <%= facility.city %>, <%= facility.state %></p>
-    </div>
-    <div class="action">
-      <div class="btn-group" role="group" aria-label="...">
-        <%= link_to 'Edit', edit_facility_path(facility), class: 'btn btn-default' %>
-        <%= link_to 'Delete', facility, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this facility?' }, class: 'btn btn-danger' %>
-      </div>
     </div>
   </div>
 <% end %>

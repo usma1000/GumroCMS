@@ -32,8 +32,12 @@
         <td><%= carrier.comments %></td>
         <td>
           <div class="btn-group" role="group" aria-label="...">
-            <%= link_to 'Edit', edit_carrier_path(carrier), class: 'btn btn-default' %>
-            <%= link_to 'Delete', carrier, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this carrier?' }, class: 'btn btn-danger' %>
+            <%= link_to edit_carrier_path(carrier), class: 'btn btn-default' do %>
+              <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to carrier, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this carrier?' }, class: 'btn btn-danger' do %>
+              <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+            <% end %>
           </div>
         </td>
       </tr>
