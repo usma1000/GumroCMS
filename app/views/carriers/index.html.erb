@@ -18,6 +18,8 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Experience in Retail</th>
+      <th>Comments</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -26,6 +28,8 @@
     <% @carriers.each do |carrier| %>
       <tr>
         <td><%= link_to carrier.name, carrier %></td>
+        <td><%= boolean_yesno(carrier.exp_in_retail) %></td>
+        <td><%= carrier.comments %></td>
         <td>
           <div class="btn-group" role="group" aria-label="...">
             <%= link_to 'Edit', edit_carrier_path(carrier), class: 'btn btn-default' %>

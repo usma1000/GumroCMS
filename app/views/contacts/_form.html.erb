@@ -32,6 +32,6 @@
     <%= f.select :carrier_id, options_for_select(@carriers.map{ |s| [s.name, s.id] }, params[:carrier_id]) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
   </div>
 <% end %>
