@@ -35,7 +35,7 @@
             <%= link_to edit_carrier_path(carrier), class: 'btn btn-default' do %>
               <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>
             <% end %>
-            <%= link_to carrier, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this carrier?' }, class: 'btn btn-danger' do %>
+            <%= link_to carrier, method: :delete, data: { confirm: 'Woah! Careful, buddy. If you delete this carrier, it will delete all its associated contacts and facilities as well. Are you sure you want to do this?' }, class: 'btn btn-danger' do %>
               <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
             <% end %>
           </div>

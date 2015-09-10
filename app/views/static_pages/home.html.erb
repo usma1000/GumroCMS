@@ -1,5 +1,6 @@
-<h1 class="text-center">G&amp;A Carrier Management System</h1>
-
+<%= image_tag("GnA_Logo.png", size: "150x150", class: "center-block", alt: "Gumro and Associates Logo" )%>
+<h1 class="text-center">Gumro &amp; Associates<br>Carrier Management System</h1>
+<hr>
 <% if user_signed_in? %>
   <p class="lead text-center">Choose <%= link_to 'Carriers', carriers_path =%>, <%= link_to 'Contacts', contacts_path =%>, or <%= link_to 'Facilities', facilities_path =%> to get started.</p>
 <% else %>
@@ -25,8 +26,10 @@
     </ul>
     <h3>To Do:</h3>
     <ul>
+      <li>Add page for unregistered users to submit their own contact information.</li>
       <li>Add more info to Facilities cards.</li>
-      <li>Add search functionality.</li>
+      <li>Add Comments column to Contacts database.</li>
+      <li>Fix search functionality.</li>
     </ul>
   </div>
 </div>
