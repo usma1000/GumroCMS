@@ -56,7 +56,7 @@
       <%= boolean_yesno(@carrier.operate_year_round) %>
     </p>
     <p>
-      <strong>Ability To Operate 24h A Day:</strong>
+      <strong>Ability To Operate 24 hours A Day:</strong>
       <%= boolean_yesno(@carrier.operate_twentyfour_hours) %>
     </p>
     <p>
@@ -81,5 +81,19 @@
     </p>
   </div>
 </div>
+
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Contacts At <%= @carrier.name %>.</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>This better work!</strong>
+    </p>
+  </div>
+</div>
+
+
 <%= link_to 'Edit', edit_carrier_path(@carrier), class: 'btn btn-default' %>
 <%= link_to 'Back', carriers_path, class: 'btn btn-default' %>

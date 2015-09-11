@@ -9,7 +9,9 @@
       <% end %>
     </div>
     <div class="col-sm-8">
-      <%= link_to 'New Carrier', new_carrier_path, class: 'btn btn-primary pull-right' %>
+      <%= link_to new_carrier_path, class: 'btn btn-success pull-right' do %>
+        <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> New Carrier
+      <% end %>
     </div>
   </div>
 </div>
@@ -20,7 +22,7 @@
       <th>Name</th>
       <th>Experience in Retail</th>
       <th>Comments</th>
-      <th colspan="2"></th>
+      <th>Edit/Delete</th>
     </tr>
   </thead>
 

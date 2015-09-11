@@ -9,11 +9,14 @@
       <% end %>
     </div>
     <div class="col-sm-8">
-      <%= link_to 'New Contact', new_contact_path, class: 'btn btn-primary pull-right' %>
+      <%= link_to new_contact_path, class: 'btn btn-success pull-right' do %>
+        <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> New Contact
+      <% end %>
     </div>
   </div>
 </div>
 
+<div class="contacts">
 <% @contacts.each do |contact| %>
   <div class="card">
     <div class="content">
@@ -39,3 +42,4 @@
     </div>
   </div>
 <% end %>
+</div>

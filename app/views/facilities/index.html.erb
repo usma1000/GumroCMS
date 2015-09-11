@@ -15,7 +15,9 @@
       <% end %>
     </div>
     <div class="col-sm-4">
-      <%= link_to 'New Facility', new_facility_path, class: 'btn btn-primary pull-right' %>
+      <%= link_to new_facility_path, class: 'btn btn-success pull-right' do %>
+        <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> New Facility
+      <% end %>
     </div>
   </div>
 </div>
