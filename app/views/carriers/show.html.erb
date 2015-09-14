@@ -79,6 +79,12 @@
       <strong>Comments:</strong>
       <%= @carrier.comments %>
     </p>
+    <% if @carrier.nda? %>
+      <p><strong>NDA:</strong></p>
+      <%= link_to image_tag(@carrier.nda.url(:large)), @carrier.nda.url %>
+    <% else %>
+      <p><strong>No NDA uploaded.</strong></p>
+    <% end %>
   </div>
 </div>
 

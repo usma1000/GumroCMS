@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914134651) do
+ActiveRecord::Schema.define(version: 20150914143938) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
@@ -29,6 +29,10 @@ ActiveRecord::Schema.define(version: 20150914134651) do
     t.boolean  "handle_cosmetic_products"
     t.boolean  "accept_payment_in_thirty_days"
     t.string   "comments"
+    t.string   "nda_file_name"
+    t.string   "nda_content_type"
+    t.integer  "nda_file_size"
+    t.datetime "nda_updated_at"
   end
 
   create_table "contacts", force: :cascade do |t|
