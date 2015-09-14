@@ -23,5 +23,17 @@
   <%= @contact.carrier.name %>
 </p>
 
+<% if @contact.updated_at != @contact.created_at %>
+  <p>
+    <strong>Updated on:</strong>
+    <%= @contact.updated_at.to_formatted_s(:long_ordinal) %>
+  </p>
+<% else %>
+  <p>
+    <strong>Created on:</strong>
+    <%= @contact.created_at.to_formatted_s(:long_ordinal) %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_contact_path(@contact), class: 'btn btn-default' %>
 <%= link_to 'Back', contacts_path, class: 'btn btn-default' %>
