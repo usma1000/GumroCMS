@@ -78,7 +78,11 @@
     <div class="col-sm-4">
       <% if @carrier.nda? %>
         <p><strong>NDA:</strong> - <%= link_to 'Delete', remove_carrier_nda_path %></p>
-        <%= link_to image_tag(@carrier.nda.url(:large)), @carrier.nda.url, :class => 'file-thumbnail' %>
+        <% if @carrier.imagenda? %>
+          <%= link_to image_tag(@carrier.nda.url(:large)), @carrier.nda.url, :class => 'file-thumbnail' %>
+        <% else %>
+          <%= link_to @carrier.nda_file_name, @carrier.nda.url %>
+        <% end %>
       <% else %>
         <p><strong>No NDA uploaded.</strong></p>
       <% end %>
@@ -87,7 +91,11 @@
     <div class="col-sm-4">
       <% if @carrier.contract? %>
         <p><strong>Contract:</strong> - <%= link_to 'Delete', remove_carrier_contract_path %></p>
-        <%= link_to image_tag(@carrier.contract.url(:large)), @carrier.contract.url, :class => 'file-thumbnail' %>
+        <% if @carrier.imagecontract? %>
+          <%= link_to image_tag(@carrier.contract.url(:large)), @carrier.contract.url, :class => 'file-thumbnail' %>
+        <% else %>
+          <%= link_to @carrier.contract_file_name, @carrier.contract.url %>
+        <% end %>
       <% else %>
         <p><strong>No contract uploaded.</strong></p>
       <% end %>
