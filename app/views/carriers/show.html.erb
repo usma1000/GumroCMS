@@ -72,14 +72,9 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Additional Info</h3>
+    <h3 class="panel-title">Files</h3>
   </div>
   <div class="panel-body">
-    <p>
-      <strong>Comments:</strong>
-      <%= @carrier.comments %>
-    </p>
-
     <div class="col-sm-4">
       <% if @carrier.nda? %>
         <p><strong>NDA:</strong> - <%= link_to 'Delete', remove_carrier_nda_path %></p>
@@ -97,6 +92,18 @@
         <p><strong>No contract uploaded.</strong></p>
       <% end %>
     </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Additional Info</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Comments:</strong>
+      <%= @carrier.comments %>
+    </p>
   </div>
 </div>
 
