@@ -80,8 +80,8 @@
       <%= @carrier.comments %>
     </p>
     <% if @carrier.nda? %>
-      <p><strong>NDA:</strong></p>
-      <%= link_to image_tag(@carrier.nda.url(:large)), @carrier.nda.url %>
+      <p><strong>NDA:</strong> - <%= link_to 'Delete', remove_carrier_nda_path %></p>
+      <%= link_to image_tag(@carrier.nda.url(:large)), @carrier.nda.url, :class => 'file-thumbnail' %>
     <% else %>
       <p><strong>No NDA uploaded.</strong></p>
     <% end %>

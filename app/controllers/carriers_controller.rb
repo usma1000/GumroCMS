@@ -14,6 +14,12 @@ class CarriersController < ApplicationController
     end
   end
 
+  def remove_nda
+    @carrier = Carrier.find(params[:id])
+    @carrier.nda = nil
+    @carrier.save
+    redirect_to @carrier, flash: { success: 'The NDA has been deleted. It will be missed.'}
+  end
   # GET /carriers/1
   # GET /carriers/1.json
   def show
