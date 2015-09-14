@@ -29,7 +29,11 @@
   <tbody>
     <% @carriers.each do |carrier| %>
       <tr>
-        <td><%= link_to carrier.name, carrier %></td>
+        <td><%= link_to carrier.name, carrier %>
+          <% if carrier.nda? %>
+            - <i class="glyphicon glyphicon-file" aria-hidden="true"></i>
+          <% end %>
+        </td>
         <td><%= boolean_yesno(carrier.exp_in_retail) %></td>
         <td><%= carrier.comments %></td>
         <td>
@@ -46,3 +50,14 @@
     <% end %>
   </tbody>
 </table>
+
+<hr>
+
+<p>
+<i class="glyphicon glyphicon-file" aria-hidden="true"></i>
+- A valid NDA is uploaded.
+</p>
+<p>
+<i class="glyphicon glyphicon-warning-sign text-danger" aria-hidden="true"></i>
+- The uploaded NDA has expired.
+</p>
