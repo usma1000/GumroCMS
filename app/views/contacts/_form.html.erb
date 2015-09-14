@@ -11,25 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
+    <%= f.text_field :phone, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :carrier %><br>
-    <%= f.select :carrier_id, options_for_select(@carriers.map{ |s| [s.name, s.id] }, params[:carrier_id]) %>
+    <%= f.select :carrier_id, options_for_select(@carriers.map{ |s| [s.name, s.id] }, params[:carrier_id]), :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :comments %><br>
+    <%= f.text_area :comments, :rows => "4", :class => 'form-control' %>
   </div>
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-primary' %>

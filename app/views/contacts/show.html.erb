@@ -1,39 +1,50 @@
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
+<div class="row row-centered">
+  <div class="col-sm-6 col-sm-offset-3 well">
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @contact.name %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @contact.phone %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @contact.email %>
+    </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @contact.title %>
-</p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @contact.phone %>
+    </p>
 
-<p>
-  <strong>Carrier:</strong>
-  <%= @contact.carrier.name %>
-</p>
+    <p>
+      <strong>Title:</strong>
+      <%= @contact.title %>
+    </p>
 
-<% if @contact.updated_at != @contact.created_at %>
-  <p>
-    <strong>Updated on:</strong>
-    <%= @contact.updated_at.to_formatted_s(:long_ordinal) %>
-  </p>
-<% else %>
-  <p>
-    <strong>Created on:</strong>
-    <%= @contact.created_at.to_formatted_s(:long_ordinal) %>
-  </p>
-<% end %>
+    <p>
+      <strong>Carrier:</strong>
+      <%= @contact.carrier.name %>
+    </p>
 
-<%= link_to 'Edit', edit_contact_path(@contact), class: 'btn btn-default' %>
-<%= link_to 'Back', contacts_path, class: 'btn btn-default' %>
+    <p>
+      <strong>Comments:</strong>
+      <%= @contact.comments %>
+    </p>
+
+    <% if @contact.updated_at != @contact.created_at %>
+      <p>
+        <strong>Updated on:</strong>
+        <%= @contact.updated_at.to_formatted_s(:long_ordinal) %>
+      </p>
+    <% else %>
+      <p>
+        <strong>Created on:</strong>
+        <%= @contact.created_at.to_formatted_s(:long_ordinal) %>
+      </p>
+    <% end %>
+    <hr>
+    <%= link_to 'Edit', edit_contact_path(@contact), class: 'btn btn-default' %>
+    <%= link_to 'Back', contacts_path, class: 'btn btn-default' %>
+
+  </div>
+</div>

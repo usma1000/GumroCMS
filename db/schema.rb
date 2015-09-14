@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909192200) do
+ActiveRecord::Schema.define(version: 20150914134651) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150909192200) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "carrier_id"
+    t.string   "comments"
   end
 
   add_index "contacts", ["carrier_id"], name: "index_contacts_on_carrier_id"
