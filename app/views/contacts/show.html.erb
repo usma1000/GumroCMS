@@ -43,8 +43,9 @@
       </p>
     <% end %>
     <hr>
-    <%= link_to 'Edit', edit_contact_path(@contact), class: 'btn btn-default' %>
-    <%= link_to 'Back', contacts_path, class: 'btn btn-default' %>
-
+    <div class="btn-group">
+      <%= link_to 'Edit', edit_contact_path(@contact), class: 'btn btn-default' %>
+      <%= link_to 'Back', contacts_path, class: 'btn btn-default' %>
+  </div>
   </div>
 </div>

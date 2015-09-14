@@ -5,8 +5,9 @@
 
     <%= render 'form' %><hr>
 
-    <%= link_to 'Show', @contact, class: 'btn btn-default' %>
-    <%= link_to 'Back', contacts_path, class: 'btn btn-default' %>
-
+    <div class="btn-group">
+      <%= link_to 'Show', @contact, class: 'btn btn-default' %>
+      <%= link_to 'Back', contacts_path, class: 'btn btn-default' %>
+    </div>
   </div>
 </div>
