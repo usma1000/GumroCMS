@@ -20,6 +20,13 @@ class CarriersController < ApplicationController
     @carrier.save
     redirect_to @carrier, flash: { success: 'The NDA has been deleted. It will be missed.'}
   end
+
+  def remove_contract
+    @carrier = Carrier.find(params[:id])
+    @carrier.contract = nil
+    @carrier.save
+    redirect_to @carrier, flash: { success: 'The Contract has been deleted. It will be missed.'}
+  end
   # GET /carriers/1
   # GET /carriers/1.json
   def show
@@ -82,6 +89,6 @@ class CarriersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def carrier_params
-      params.require(:carrier).permit(:name, :exp_in_retail, :exp_in_intl_cargo, :exp_in_garments_on_hangars, :exp_in_noncommercial_goods, :exp_in_replenishment, :exp_in_shop_returns, :two_year_contract, :operate_year_round, :operate_twentyfour_hours, :handle_cosmetic_products, :accept_payment_in_thirty_days, :comments, :nda)
+      params.require(:carrier).permit(:name, :exp_in_retail, :exp_in_intl_cargo, :exp_in_garments_on_hangars, :exp_in_noncommercial_goods, :exp_in_replenishment, :exp_in_shop_returns, :two_year_contract, :operate_year_round, :operate_twentyfour_hours, :handle_cosmetic_products, :accept_payment_in_thirty_days, :comments, :nda, :contract)
     end
 end

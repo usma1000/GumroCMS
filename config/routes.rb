@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'carrier/:id/remove_nda', to: 'carriers#remove_nda', as: 'remove_carrier_nda'
+  get 'carrier/:id/remove_contract', to: 'carriers#remove_contract', as: 'remove_carrier_contract'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

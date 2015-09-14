@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914143938) do
+ActiveRecord::Schema.define(version: 20150914191653) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +33,10 @@ ActiveRecord::Schema.define(version: 20150914143938) do
     t.string   "nda_content_type"
     t.integer  "nda_file_size"
     t.datetime "nda_updated_at"
+    t.string   "contract_file_name"
+    t.string   "contract_content_type"
+    t.integer  "contract_file_size"
+    t.datetime "contract_updated_at"
   end
 
   create_table "contacts", force: :cascade do |t|
