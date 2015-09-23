@@ -12,6 +12,7 @@ gem 'devise',       '~> 3.5.2'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'paperclip'
+gem 'ransack', '~> 1.7.0'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'

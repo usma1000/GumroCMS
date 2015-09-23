@@ -5,19 +5,8 @@ class FacilitiesController < ApplicationController
   # GET /facilities
   # GET /facilities.json
   def index
-    @facilities = Facility.all
-
-    if params[:search]
-      @facilites = Facility.search(params[:search])
-    else
-      @facilities = Facility.all
-    end
-
-    if params[:searchState]
-      @facilites = Facility.search(params[:searchState])
-    else
-      @facilities = Facility.all
-    end
+    @search = Facility.ransack(params[:q])
+    @facilities = @search.result
   end
 
   # GET /facilities/1
