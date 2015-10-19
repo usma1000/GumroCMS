@@ -47,3 +47,18 @@
     </ul>
   </div>
 </div>
+
+<div class="well">
+  <div class="row">
+  <div class="col-sm-6">
+    <h4>Message Wall</h4>
+  </div>
+  <div class="col-sm-6">
+    <%= link_to new_message_path, class: 'btn btn-success pull-right' do %>
+      <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> New Message
+    <% end %>
+  </div>
+</div>
+</div>
+
+<%= render @messages %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014181258) do
+ActiveRecord::Schema.define(version: 20151019183811) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20151014181258) do
     t.integer  "contract_file_size"
     t.datetime "contract_updated_at"
   end
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "author"
+    t.text     "body"
+    t.integer  "carrier_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["carrier_id"], name: "index_comments_on_carrier_id"
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -86,6 +96,15 @@ ActiveRecord::Schema.define(version: 20151014181258) do
   end
 
   add_index "facilities", ["carrier_id"], name: "index_facilities_on_carrier_id"
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

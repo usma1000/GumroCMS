@@ -52,6 +52,9 @@ GEM
       slop (~> 3.6)
     climate_control (0.0.3)
       activesupport (>= 3.0)
+    closure_tree (5.2.0)
+      activerecord (>= 3.2.0)
+      with_advisory_lock (>= 3.0.0)
     cocaine (0.5.7)
       climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.1.0)
@@ -184,6 +187,9 @@ GEM
       binding_of_caller (= 0.7.3.pre1)
       railties (~> 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    with_advisory_lock (3.0.0)
+      activerecord (>= 3.2)
+      thread_safe
 
 PLATFORMS
   ruby
@@ -192,6 +198,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass (~> 3.2.0)
   byebug (= 3.4.0)
+  closure_tree
   coffee-rails (= 4.1.0)
   devise (~> 3.5.2)
   jbuilder (= 2.2.3)

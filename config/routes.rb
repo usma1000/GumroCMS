@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :facilities
   resources :carriers
   resources :contacts
-
+  resources :messages
+  
   resources :carriers do
     resources :contacts
     resources :facilities
