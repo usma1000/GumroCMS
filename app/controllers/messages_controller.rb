@@ -1,11 +1,11 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @messages = Message.all.order('created_at DESC')
   end
 
   def show
-    @messages = Message.all
   end
 
   def new
@@ -19,8 +19,8 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Facility was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
+        format.html { redirect_to :back, notice: 'Facility was successfully created.' }
+        format.json { render :index, status: :created, location: @message }
       else
         format.html { render :new }
         format.json { render json: @message.errors, status: :unprocessable_entity }

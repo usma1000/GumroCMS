@@ -12,6 +12,7 @@
     <h2>Development Log</h2><hr>
     <h3>Recent Changes:</h3>
     <ul>
+      <li>Added Message Wall on home page for logged in users.</li>
       <li>Added ability to upload .doc and .xls file types.</li>
       <li>Can now upload and delete contract files for carriers.</li>
       <li>Can now upload and delete NDA files for carriers.</li>
@@ -32,6 +33,7 @@
     </ul>
     <h3>To Do:</h3>
     <ul>
+      <li>Move Message Wall form to home page.</li>
       <li>Fix edit page parameters not retaining.</li>
       <li>Uploaded files get deleted by cloud hosting platform. Upgrade to S3?</li>
       <li>NDA functionality</li>
@@ -48,17 +50,19 @@
   </div>
 </div>
 
-<div class="well">
-  <div class="row">
-  <div class="col-sm-6">
-    <h4>Message Wall</h4>
+<% if user_signed_in? %>
+  <div class="well">
+    <div class="row">
+    <div class="col-sm-6">
+      <h4>Message Wall</h4>
+    </div>
+    <div class="col-sm-6">
+      <%= link_to new_message_path, class: 'btn btn-success pull-right' do %>
+        <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> New Message
+      <% end %>
+    </div>
   </div>
-  <div class="col-sm-6">
-    <%= link_to new_message_path, class: 'btn btn-success pull-right' do %>
-      <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> New Message
-    <% end %>
   </div>
-</div>
-</div>
 
-<%= render @messages %>
+  <%= render @messages %>
+<% end %>
