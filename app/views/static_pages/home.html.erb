@@ -64,5 +64,6 @@
   </div>
   </div>
 
-  <%= render @messages %>
+  <%= render @messages.limit(10) %>
+  <%= link_to 'See All Messages', messages_path =%>
 <% end %>
