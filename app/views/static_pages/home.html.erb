@@ -1,10 +1,26 @@
 <%= image_tag("GnA_Logo.png", size: "150x150", class: "center-block", alt: "Gumro and Associates Logo" )%>
 <h1 class="text-center">Gumro &amp; Associates<br>Carrier Management System</h1>
 <hr>
-<% if user_signed_in? %>
-  <p class="lead text-center">Choose <%= link_to 'Carriers', carriers_path =%>, <%= link_to 'Contacts', contacts_path =%>, or <%= link_to 'Facilities', facilities_path =%> to get started.</p>
-<% else %>
+<% if !user_signed_in? %>
   <p class="lead text-center">Please <%= link_to 'Log In', new_user_session_path =%> or <%= link_to 'Sign Up', new_user_registration_path =%>.</p>
+<% end %>
+
+<% if user_signed_in? %>
+  <div class="well">
+    <div class="row">
+    <div class="col-sm-6">
+      <h4>Message Wall</h4>
+    </div>
+    <div class="col-sm-6">
+      <%= link_to new_message_path, class: 'btn btn-success pull-right' do %>
+        <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> New Message
+      <% end %>
+    </div>
+  </div>
+  </div>
+
+  <%= render @messages.limit(10) %>
+  <%= link_to 'See All Messages', messages_path =%>
 <% end %>
 
 <div class="row row-centered">
@@ -49,21 +65,3 @@
     </ul>
   </div>
 </div>
-
-<% if user_signed_in? %>
-  <div class="well">
-    <div class="row">
-    <div class="col-sm-6">
-      <h4>Message Wall</h4>
-    </div>
-    <div class="col-sm-6">
-      <%= link_to new_message_path, class: 'btn btn-success pull-right' do %>
-        <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> New Message
-      <% end %>
-    </div>
-  </div>
-  </div>
-
-  <%= render @messages.limit(10) %>
-  <%= link_to 'See All Messages', messages_path =%>
-<% end %>
