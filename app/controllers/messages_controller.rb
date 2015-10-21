@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
 
   def show
     @user = current_user
+    @email = @message.user.email
   end
 
   def new

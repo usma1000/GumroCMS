@@ -1,3 +1,9 @@
-<%= @message.body %>
-<%= @message.user_id %>
-<%= @user.id %>
+<p class="text-muted">
+  Created by:
+  <strong><%= @email %></strong>, posted
+  <%= time_ago_in_words(@message.created_at) %> ago.
+</p>
+
+<blockquote>
+  <%= @message.body %>
+</blockquote>
