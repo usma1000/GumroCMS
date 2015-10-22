@@ -1,6 +1,6 @@
 class FacilitiesController < ApplicationController
   before_action :set_facility, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [:new, :create]
 
   # GET /facilities
   # GET /facilities.json
@@ -33,8 +33,8 @@ class FacilitiesController < ApplicationController
 
     respond_to do |format|
       if @facility.save
-        format.html { redirect_to @facility, notice: 'Facility was successfully created.' }
-        format.json { render :show, status: :created, location: @facility }
+        format.html { redirect_to :root, notice: 'Facility was successfully created.' }
+        format.json { render :root, status: :created, location: @facility }
       else
         format.html { render :new }
         format.json { render json: @facility.errors, status: :unprocessable_entity }

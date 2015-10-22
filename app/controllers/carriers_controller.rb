@@ -1,6 +1,6 @@
 class CarriersController < ApplicationController
   before_action :set_carrier, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:show, :destroy]
+  before_action :authenticate_user!, :except => [:new, :create]
 
   # GET /carriers
   # GET /carriers.json
@@ -48,8 +48,8 @@ class CarriersController < ApplicationController
 
     respond_to do |format|
       if @carrier.save
-        format.html { redirect_to @carrier, notice: 'Carrier was successfully created.' }
-        format.json { render :show, status: :created, location: @carrier }
+        format.html { redirect_to :root, notice: 'Carrier was successfully created.' }
+        format.json { render :root, status: :created, location: @carrier }
       else
         format.html { render :new }
         format.json { render json: @carrier.errors, status: :unprocessable_entity }
