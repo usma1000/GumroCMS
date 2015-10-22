@@ -1,67 +1,17 @@
 <%= image_tag("GnA_Logo.png", size: "150x150", class: "center-block", alt: "Gumro and Associates Logo" )%>
-<h1 class="text-center">Gumro &amp; Associates<br>Carrier Management System</h1>
+<h1 class="text-center">Gumro &amp; Associates</h1>
+<h3 class="text-center">Carrier Management System</h3>
 <hr>
-<% if !user_signed_in? %>
-  <p class="lead text-center">Please <%= link_to 'Log In', new_user_session_path =%> or <%= link_to 'Sign Up', new_user_registration_path =%>.</p>
-<% end %>
+
+<%= render 'buttonpanels' %>
 
 <% if user_signed_in? %>
-  <div class="well">
-    <div class="row">
-    <div class="col-sm-6">
-      <h4>Message Wall</h4>
+  <div class="row">
+    <div class="col-md-6">
+      <%= render 'messagewall' %>
     </div>
-    <div class="col-sm-6">
-      <%= link_to new_message_path, class: 'btn btn-success pull-right' do %>
-        <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> New Message
-      <% end %>
+    <div class="col-md-6">
+      <%= render 'developerlog' %>
     </div>
   </div>
-  </div>
-
-  <%= render @messages.limit(10) %>
-  <%= link_to 'See All Messages', messages_path =%>
 <% end %>
-
-<div class="row row-centered">
-  <div class="col-sm-6 col-sm-offset-3 well">
-    <h2>Development Log</h2><hr>
-    <h3>Recent Changes:</h3>
-    <ul>
-      <li>Added Message Wall on home page for logged in users.</li>
-      <li>Added ability to upload .doc and .xls file types <span class="text-danger">(doesn't work with free hosting).</span></li>
-      <li>Can now upload and delete contract files for carriers.</li>
-      <li>Can now upload and delete NDA files for carriers.</li>
-      <li>Added a comments field for contacts.</li>
-      <li>Contacts' email addresses are now links that open up Outlook.</li>
-      <li>Carriers detail pages now show associated contacts and facilities.</li>
-      <li>Added some visual styling.</li>
-      <li>Added more information to Carriers and Facilities pages.</li>
-      <li>Tapping a Contact's phone # from a smartphone will call them.</li>
-      <li>Asks if you're sure before deleting an entry.</li>
-      <li>Added Edit and Delete functions to Carriers, Contacts and Facilities.</li>
-      <li>Added success and error messages.</li>
-      <li>Passwords are now encrypted.</li>
-      <li>Added user account functionality.</li>
-      <li>Joined Contacts and Facilities tables to Carriers table.</li>
-      <li>Created tables for Carriers, Contacts, and Facilities.</li>
-      <li>Database built.</li>
-    </ul>
-    <h3>To Do:</h3>
-    <ul>
-      <li>Add ability to type message to message form directly from the home page.</li>
-      <li>Search function on production database shouldn't be case sensitive.</li>
-      <li>Uploaded files get deleted by cloud hosting platform. Upgrade to S3?</li>
-      <li>NDA functionality</li>
-        <ul>
-          <li>Add <code>NDA-expiration-date</code>, and <code>NDA-signed-by</code> to carriers.</li>
-          <li>Ability to select which contact signed the NDA.</li>
-          <li>Send email to info@gumroandassociates.com when NDA expires.</li>
-        </ul>
-      <li>Add new view to carriers page for displaying uploaded documents.</li>
-      <li>Add page for unregistered users to submit their own contact information.</li>
-      <li>Add more info to Facilities cards.</li>
-      <li>Add User comments to Carriers and Contacts show pages.</li>
-    </ul>
-  </div>
-</div>

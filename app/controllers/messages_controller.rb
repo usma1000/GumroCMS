@@ -22,7 +22,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to :back, notice: 'Message was successfully created.' }
+        format.html { redirect_to :root, notice: 'Message was successfully created.' }
         format.json { render :index, status: :created, location: @message }
       else
         format.html { render :new }
