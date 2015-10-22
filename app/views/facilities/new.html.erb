@@ -1,5 +1,9 @@
 <h1>New Facility</h1>
 
-<%= render 'form' %>
+<%= render 'form' %><hr>
 
-<%= link_to 'Back', facilities_path, class: 'btn btn-default' %>
+<% if user_signed_in? %>
+  <%= link_to 'Back', facilities_path, class: 'btn btn-default' %>
+<% else %>
+  <%= link_to 'Back', root_path, class: 'btn btn-default' %>
+<% end %>
