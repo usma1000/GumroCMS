@@ -2,24 +2,13 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
-  <body style="width: 500px; margin: 50px auto 50px auto;">
-
-    <%= image_tag("GnA_Logo.png", size: "80x80", class: "pull-left", style: "margin-right: 20px", alt: "Gumro and Associates Logo" )%>
-    <h1>Gumro &amp; Associates</h1>
-    <h3>Carrier Management System</h3>
+  <body>
+    <h1>New Carrier Form Submitted</h1>
+    <h2><%= @carriername %> has just registered.</h2>
     <hr>
-
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Carrier Form Submitted</h3>
-      </div>
-      <div class="panel-body">
-        <p>Head's up! Someone filled out the new carrier form on <a href="http://gumrocms.herokuapp.com">GumroCMS</a>.</p>
-        <p><%= link_to "Carriers Page", carriers_path %></p>
-      </div>
-    </div>
-
+    <p>Head's up! Someone filled out the new carrier form on <a href="http://gumrocms.herokuapp.com">GumroCMS</a>.</p>
+    <p><a href="http://gumrocms.herokuapp.com/<%= carriers_path %>/<%= @carrierpath %>">See the new carrier's info</a></p>
+    <p><a href="http://gumrocms.herokuapp.com/<%= carriers_path %>">See all carriers</a></p>
   </body>
 </html>

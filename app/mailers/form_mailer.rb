@@ -1,8 +1,12 @@
 class FormMailer < ApplicationMailer
   default from: "GumroCMS"
 
-  def carrier_email
-    mail(to: 'info@gumroandassociates.com', subject: 'Carrier Form Submitted')
+  def carrier_email(carriername, carrierpath)
+    @carriername = carriername
+    @carrierpath = carrierpath
+    @subject = "Carrier Form - " + @carriername
+
+    mail(to: 'anandu@gumroandassociates.com', subject: @subject)
   end
 
   def facility_email

@@ -49,7 +49,7 @@ class CarriersController < ApplicationController
     respond_to do |format|
       if @carrier.save
         # Send email
-        FormMailer.carrier_email.deliver
+        FormMailer.carrier_email(@carrier.name, @carrier.id).deliver
 
         format.html { redirect_to :root, notice: 'Carrier was successfully created.' }
         format.json { render :root, status: :created, location: @carrier }
