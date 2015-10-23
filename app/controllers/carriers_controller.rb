@@ -48,7 +48,7 @@ class CarriersController < ApplicationController
 
     respond_to do |format|
       if @carrier.save
-
+        # Send email
         FormMailer.carrier_email.deliver
 
         format.html { redirect_to :root, notice: 'Carrier was successfully created.' }
