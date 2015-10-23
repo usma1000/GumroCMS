@@ -2,24 +2,13 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
-  <body style="width: 500px; margin: 50px auto 50px auto;">
-
-    <%= image_tag("GnA_Logo.png", size: "80x80", class: "pull-left", style: "margin-right: 20px", alt: "Gumro and Associates Logo" )%>
-    <h1>Gumro &amp; Associates</h1>
-    <h3>Carrier Management System</h3>
+  <body>
+    <h1>New Facility Form Submitted</h1>
+    <h2>A facility in <%= @facilitycity %> was just registered.</h2>
     <hr>
-
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Facility Form Submitted</h3>
-      </div>
-      <div class="panel-body">
-        <p>Head's up! Someone filled out the new facility form on <a href="http://gumrocms.herokuapp.com">GumroCMS</a>.</p>
-        <p><%= link_to "Facilities Page", facilities_path %></p>
-      </div>
-    </div>
-
+    <p>Head's up! Someone filled out the new facility form on <a href="http://gumrocms.herokuapp.com">GumroCMS</a>.</p>
+    <p><a href="http://gumrocms.herokuapp.com/<%= facilities_path %>/<%= @facilitypath %>">See the new facility's info</a></p>
+    <p><a href="http://gumrocms.herokuapp.com/<%= facilities_path %>">See all facilities</a></p>
   </body>
 </html>

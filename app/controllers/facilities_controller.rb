@@ -33,7 +33,7 @@ class FacilitiesController < ApplicationController
 
     respond_to do |format|
       if @facility.save
-        FormMailer.facility_email.deliver
+        FormMailer.facility_email(@facility.city, @facility.id).deliver
         format.html { redirect_to :root, notice: 'Facility was successfully created.' }
         format.json { render :root, status: :created, location: @facility }
       else

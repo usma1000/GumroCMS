@@ -5,10 +5,10 @@ class FormMailerPreview < ActionMailer::Preview
   end
 
   def facility_email_preview
-    FormMailer.facility_email
+    FormMailer.facility_email(Facility.first.city, Facility.first.id)
   end
 
   def contact_email_preview
-    FormMailer.contact_email
+    FormMailer.contact_email(Contact.first.name, Contact.first.id)
   end
 end
