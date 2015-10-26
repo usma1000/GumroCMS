@@ -35,6 +35,6 @@ class Carrier < ActiveRecord::Base
   end
 
   def self.search(search)
-    where("name LIKE ? OR comments LIKE ?", "%#{search}%", "%#{search}%")
+    where("lower(name) LIKE ? OR lower(comments) LIKE ?", "%#{search}%".downcase, "%#{search}%".downcase)
   end
 end
