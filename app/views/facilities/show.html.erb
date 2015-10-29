@@ -67,7 +67,7 @@
 
     <p>
       <strong>Separate caged area for gas tanks:</strong>
-      <%= boolean_yesno(@facility.SeparateCagedAreaForGasTanks) %>
+      <%= boolean_yesno(@facility.separate_caged_area_for_gas_tanks) %>
     </p>
 
     <p>
@@ -131,7 +131,27 @@
 
     <p>
       <strong>Average Theft Rate:</strong>
-      <%= @facility.average_theft_rate %>
+      <%= boolean_yesno(@facility.average_theft_rate) %>
+    </p>
+
+    <p>
+      <strong>Driver Scanning Capabilities:</strong>
+      <%= boolean_yesno(@facility.driver_scan) %>
+    </p>
+
+    <p>
+      <strong>Have Independant Contractors?:</strong>
+      <%= boolean_yesno(@facility.independant_contractors) %>
+    </p>
+
+    <p>
+      <strong>Have Company Drivers?:</strong>
+      <%= boolean_yesno(@facility.company_drivers) %>
+    </p>
+
+    <p>
+      <strong>Independant to Company Driver Ratio:</strong>
+      <%= @facility.ratio_independant_company %>
     </p>
   </div>
 </div>

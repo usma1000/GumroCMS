@@ -62,7 +62,7 @@
         <%= f.check_box :has_drop_yard %> <strong>Has Drop Yard</strong>
       </div>
       <div class="field">
-        <%= f.check_box :SeparateCagedAreaForGasTanks %> <strong>Separate caged area for gas tanks</strong>
+        <%= f.check_box :separate_caged_area_for_gas_tanks %> <strong>Separate caged area for gas tanks</strong>
       </div>
       <div class="field">
         <%= f.label :terminal_door_count %><br>
@@ -111,6 +111,19 @@
         <%= f.check_box :holds_driver_training %> <strong>Holds Driver Training</strong>
       </div>
       <div class="field">
+        <%= f.check_box :driver_scan %> <strong>Driver Scanning Capabilities</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :independant_contractors %> <strong>Have Independant Contractors?</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :company_drivers %> <strong>Have Company Drivers?</strong>
+      </div>
+      <div class="field">
+        <strong>Independant to Company Driver Ratio</strong><br>
+        <%= f.text_field :ratio_independant_company %>
+      </div>
+      <div class="field">
         <%= f.label :average_theft_rate %> %<br>
         <%= f.number_field :average_theft_rate %>
       </div>
@@ -156,5 +169,5 @@
 
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-primary' %>
-  </div>
+  </div><br>
 <% end %>
