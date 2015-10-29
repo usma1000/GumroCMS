@@ -66,8 +66,8 @@ ActiveRecord::Schema.define(version: 20151029170929) do
     t.string   "address"
     t.string   "city"
     t.string   "state"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "carrier_id"
     t.boolean  "has_security"
     t.boolean  "has_CCTV"
@@ -93,7 +93,11 @@ ActiveRecord::Schema.define(version: 20151029170929) do
     t.integer  "vehicle_count_sprinter_vans"
     t.integer  "vehicle_count_flat_beds"
     t.integer  "vehicle_count_reefers"
-    t.boolean  "SeparateCagedAreaForGasTanks"
+    t.boolean  "separate_caged_area_for_gas_tanks"
+    t.boolean  "driver_scan"
+    t.boolean  "independant_contractors"
+    t.boolean  "company_drivers"
+    t.string   "ratio_independant_company"
   end
 
   add_index "facilities", ["carrier_id"], name: "index_facilities_on_carrier_id"
