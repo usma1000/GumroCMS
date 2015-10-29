@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151019183811) do
+ActiveRecord::Schema.define(version: 20151029170929) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 20151019183811) do
     t.integer  "vehicle_count_sprinter_vans"
     t.integer  "vehicle_count_flat_beds"
     t.integer  "vehicle_count_reefers"
+    t.boolean  "SeparateCagedAreaForGasTanks"
   end
 
   add_index "facilities", ["carrier_id"], name: "index_facilities_on_carrier_id"
