@@ -7,6 +7,8 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
     @contacts = Contact.all
+    @carriers = Carrier.all
+    @facilities = Facility.all
 
     if params[:search]
       @contacts = Contact.search(params[:search])

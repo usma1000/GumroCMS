@@ -34,7 +34,16 @@
 
       <span class="title"><%= link_to contact.name, contact %></span>
       <p><strong><%= contact.title %></strong></p>
-      <p><%= contact.carrier.name %></p>
+      <p><%= link_to contact.carrier.name, contact.carrier %></p>
+      <p>
+        <% if contact.carrier.facilities.present? %>
+          Facilities in:
+          <% contact.carrier.facilities.each do |facility| %>
+            <%= link_to facility.state, facility %>
+            &nbsp;
+          <% end %>
+        <% end %>
+      </p>
       <hr>
 
       <a href="mailto:<%= contact.email %>" class="hidden-links">
