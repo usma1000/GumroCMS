@@ -39,6 +39,26 @@
       <strong>Handling of Shop Returns:</strong>
       <%= boolean_yesno(@carrier.exp_in_shop_returns) %>
     </p>
+    <p>
+      <strong>Sort and Segregate:</strong>
+      <%= boolean_yesno(@carrier.sort_and_segregate) %>
+    </p>
+    <p>
+      <strong>Pool Distribution:</strong>
+      <%= boolean_yesno(@carrier.pool_distribution) %>
+    </p>
+    <p>
+      <strong>Participate in Recycling Programs:</strong>
+      <%= boolean_yesno(@carrier.participate_in_recycling_programs) %>
+    </p>
+    <p>
+      <strong>Scanning:</strong>
+      <%= boolean_yesno(@carrier.scanning) %>
+    </p>
+    <p>
+      <strong>Scanning Software:</strong>
+      <%= @carrier.scanning_software %>
+    </p>
   </div>
 </div>
 
@@ -54,10 +74,6 @@
     <p>
       <strong>Ability To Operate 7 Days A Week And On Bank Holidays:</strong>
       <%= boolean_yesno(@carrier.operate_year_round) %>
-    </p>
-    <p>
-      <strong>Ability To Operate 24 hours A Day:</strong>
-      <%= boolean_yesno(@carrier.operate_twentyfour_hours) %>
     </p>
     <p>
       <strong>Ability To Handle Cosmetic Products:</strong>

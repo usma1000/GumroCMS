@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151029170929) do
+ActiveRecord::Schema.define(version: 20151030132418) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.boolean  "exp_in_retail"
     t.boolean  "exp_in_intl_cargo"
     t.boolean  "exp_in_garments_on_hangars"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20151029170929) do
     t.boolean  "exp_in_shop_returns"
     t.boolean  "two_year_contract"
     t.boolean  "operate_year_round"
-    t.boolean  "operate_twentyfour_hours"
     t.boolean  "handle_cosmetic_products"
     t.boolean  "accept_payment_in_thirty_days"
     t.string   "comments"
@@ -37,6 +36,11 @@ ActiveRecord::Schema.define(version: 20151029170929) do
     t.string   "contract_content_type"
     t.integer  "contract_file_size"
     t.datetime "contract_updated_at"
+    t.boolean  "sort_and_segregate"
+    t.boolean  "pool_distribution"
+    t.boolean  "participate_in_recycling_programs"
+    t.boolean  "scanning"
+    t.string   "scanning_software"
   end
 
   create_table "comments", force: :cascade do |t|

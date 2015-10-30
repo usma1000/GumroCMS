@@ -46,6 +46,22 @@
       <div class="field">
         <%= f.check_box :exp_in_shop_returns %> <strong>Handling of Shop Returns</strong>
       </div>
+      <div class="field">
+        <%= f.check_box :sort_and_segregate %> <strong>Sort and Segregate</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :pool_distribution %> <strong>Pool Distribution</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :participate_in_recycling_programs %> <strong>Participate in Recycling Programs</strong>
+      </div>
+      <div class="field">
+        <%= f.check_box :scanning %> <strong>Use Barcode Scanning</strong>
+      </div>
+      <div class="field">
+        <%= f.label "If so, what software is used?" %><br>
+        <%= f.text_field :scanning_software %>
+      </div>
     </div>
   </div>
 
@@ -59,9 +75,6 @@
       </div>
       <div class="field">
         <%= f.check_box :operate_year_round %> <strong>Ability To Operate 7 Days A Week And On Bank Holidays</strong>
-      </div>
-      <div class="field">
-        <%= f.check_box :operate_twentyfour_hours %> <strong>Ability To Operate 24h A Day</strong>
       </div>
       <div class="field">
         <%= f.check_box :handle_cosmetic_products %> <strong>Ability To Handle Cosmetic Products</strong>
