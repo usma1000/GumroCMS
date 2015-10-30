@@ -22,6 +22,6 @@ class FormMailer < ApplicationMailer
     @contactpath = contact.id
     @subject = "New Contact - " + @contactname
 
-    mail(to: 'anandu@gumroandassociates.com', subject: @subject)
+    mail(to: 'info@gumroandassociates.com', subject: @subject)
   end
 end
