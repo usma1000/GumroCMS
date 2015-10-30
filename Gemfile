@@ -10,6 +10,7 @@ gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'devise',       '~> 3.5.2'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootswatch-rails'
 gem 'autoprefixer-rails'
 gem 'paperclip'
 gem 'ransack', '~> 1.7.0'
