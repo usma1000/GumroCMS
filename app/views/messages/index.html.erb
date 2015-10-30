@@ -1,5 +1,9 @@
 <p>
-  <%= link_to 'Add Message', new_message_path, class: 'btn btn-primary' %>
+  <%= link_to new_message_path, class: 'btn btn-success pull-right' do %>
+    <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> New Message
+  <% end %>
 </p>
-
-<%= render @messages %>
+<div class="clearfix"></div>
+<div class="well">
+  <%= render @messages %>
+</div>
