@@ -5,12 +5,12 @@ class CarriersController < ApplicationController
   # GET /carriers
   # GET /carriers.json
   def index
-    @carriers = Carrier.all
+    @carriers = Carrier.all.order(:name)
 
     if params[:search]
       @carriers = Carrier.search(params[:search])
     else
-      @carriers = Carrier.all
+      @carriers = Carrier.all.order(:name)
     end
   end
 

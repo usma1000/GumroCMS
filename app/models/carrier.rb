@@ -1,7 +1,8 @@
 class Carrier < ActiveRecord::Base
   has_many :facilities, dependent: :destroy
   has_many :contacts, dependent: :destroy
-
+  validates :name, :presence => true
+  
   has_attached_file :nda, styles: { large: "200x200" }
   validates_attachment_content_type :nda, :content_type => ["image/jpg", "image/jpeg",
             "image/png", "image/gif", "application/pdf","application/vnd.ms-excel",

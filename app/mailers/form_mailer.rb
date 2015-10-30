@@ -17,11 +17,11 @@ class FormMailer < ApplicationMailer
     mail(to: 'info@gumroandassociates.com', subject: @subject)
   end
 
-  def contact_email(contactname, contactpath)
-    @contactname = contactname
-    @contactpath = contactpath
+  def contact_email(contact)
+    @contactname = contact.name
+    @contactpath = contact.id
     @subject = "New Contact - " + @contactname
 
-    mail(to: 'info@gumroandassociates.com', subject: @subject)
+    mail(to: 'anandu@gumroandassociates.com', subject: @subject)
   end
 end

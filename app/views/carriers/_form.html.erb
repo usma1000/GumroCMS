@@ -1,12 +1,14 @@
 <%= form_for @carrier, html: { multipart: true } do |f| %>
   <% if @carrier.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@carrier.errors.count, "error") %> prohibited this carrier from being saved:</h2>
 
+
+    <div class="alert alert-danger alert-dismissible" id="error_explanation" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong><%= pluralize(@carrier.errors.count, "error") %> prevented your form from being sent:</strong>
       <ul>
-      <% @carrier.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @carrier.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -114,6 +116,8 @@
       </div>
     </div>
   </div>
+
+  <p class="text-muted">This form contains proprietary information, trade secret information, copyrighted materials, or any combination thereof and will not be reproduced, published, used, or otherwise disseminated without your express written permission. The contents of this form are protectable under the Economic Espionage Act, 18 U.S.C. §1831 et seq., the Electronic Communications Privacy Act, 18 U.S.C. §2510 et seq., the Copyright Act, 17 U.S.C. §101 et seq., the Michigan Uniform Trade Secret Act §445.1901 et seq., as well as common law; applicable law provides criminal remedies, civil remedies, or both for the unauthorized reproduction, publication, use, or dissemination of the contents of this form or any attached files.  This form is intended solely for the use of the individual or entity addressed above; if you have received this form in error, please notify the sender.</p>
 
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-primary' %>
