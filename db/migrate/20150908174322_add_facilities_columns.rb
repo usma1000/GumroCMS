@@ -9,7 +9,7 @@ class AddFacilitiesColumns < ActiveRecord::Migration
     add_column :facilities, :has_burglar_alarm, :boolean
     add_column :facilities, :has_drop_yard, :boolean
     add_column :facilities, :terminal_door_count, :integer
-    add_column :facilities, :hours_of_operation, :integer
+    add_column :facilities, :hours_of_operation, :string
     add_column :facilities, :has_GPS, :boolean
     add_column :facilities, :has_alternate_fuel, :boolean
     add_column :facilities, :has_standard_equipment_types, :boolean
