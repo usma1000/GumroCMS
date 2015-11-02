@@ -4,7 +4,7 @@
 
 <%= render 'buttonpanels' %>
 
-<% if user_signed_in? %>
+<% if current_user.try(:admin?) %>
   <div class="row">
     <div class="col-md-6">
       <%= render 'messagewall' %>

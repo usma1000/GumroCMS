@@ -24,17 +24,23 @@
       <a class="navbar-brand" href="/"><%= image_tag("GnA_Logo.png", size: "25x25", alt: "Gumro and Associates Logo" )%> Gumro CMS</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse">
-      <% if user_signed_in? %>
+      <% if current_user.try(:admin?) %>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Carriers', carriers_path =%></li>
-          <li><%= link_to 'Facilities', facilities_path =%></li>
-          <li><%= link_to 'Contacts', contacts_path =%></li>
-          <li><%= link_to 'Account', edit_user_registration_path =%></li>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete =%></li>
+          <li><%= link_to 'Carriers', carriers_path %></li>
+          <li><%= link_to 'Facilities', facilities_path %></li>
+          <li><%= link_to 'Contacts', contacts_path %></li>
+          <li><%= link_to 'Account', edit_user_registration_path %></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
         </ul>
       <% else %>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Log In', new_user_session_path =%></li>
+          <% if !user_signed_in? %>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li><%= link_to 'Log In', new_user_session_path %></li>
+          <% else %>
+            <li><%= link_to 'Account', edit_user_registration_path %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+          <% end %>
         </ul>
       <%end %>
     </div>

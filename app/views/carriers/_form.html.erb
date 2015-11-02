@@ -87,7 +87,7 @@
     </div>
   </div>
 
-<% if user_signed_in? %>
+<% if current_user.try(:admin?) %>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">Attach Files</h3>
