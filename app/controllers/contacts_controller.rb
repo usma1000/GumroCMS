@@ -37,12 +37,13 @@ class ContactsController < ApplicationController
   # POST /contacts.json
   def create
     @contact = Contact.new(contact_params)
+    if !current_user.admin?
+      @contact.carrier_id = Carrier.find_by_name(current_user.carrier_name).id
+    end
 
     respond_to do |format|
       if @contact.save
-        if !user_signed_in?
-          FormMailer.contact_email(@contact).deliver
-        end
+        FormMailer.contact_email(@contact).deliver
         format.html { redirect_to :root, notice: 'Contact was successfully created.' }
         format.json { render :root, status: :created, location: @contact }
       else

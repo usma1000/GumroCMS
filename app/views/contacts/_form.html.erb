@@ -2,7 +2,6 @@
   <% if @contact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-
       <ul>
       <% @contact.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -27,15 +26,17 @@
     <%= f.label :title %><br>
     <%= f.text_field :title, :class => 'form-control' %>
   </div>
-  <div class="form-group">
-    <%= f.label :carrier %><br>
-    <%= f.select :carrier_id, options_for_select(@carriers.map{ |s| [s.name, s.id] }, params[:carrier_id]), :class => 'form-control' %>
-  </div>
+  <% if current_user.try(:admin?) %>
+    <div class="form-group">
+      <%= f.label :carrier %><br>
+      <%= f.select :carrier_id, options_for_select(@carriers.map{ |s| [s.name, s.id] }, params[:carrier_id]), :class => 'form-control' %>
+    </div>
+  <% end %>
   <div class="form-group">
     <%= f.label :comments %><br>
     <%= f.text_area :comments, :rows => "4", :class => 'form-control' %>
   </div>
-
+<br>
   <p class="text-muted">This form contains proprietary information, trade secret information, copyrighted materials, or any combination thereof and will not be reproduced, published, used, or otherwise disseminated without your express written permission. The contents of this form are protectable under the Economic Espionage Act, 18 U.S.C. §1831 et seq., the Electronic Communications Privacy Act, 18 U.S.C. §2510 et seq., the Copyright Act, 17 U.S.C. §101 et seq., the Michigan Uniform Trade Secret Act §445.1901 et seq., as well as common law; applicable law provides criminal remedies, civil remedies, or both for the unauthorized reproduction, publication, use, or dissemination of the contents of this form or any attached files.  This form is intended solely for the use of the individual or entity addressed above; if you have received this form in error, please notify the sender.</p>
 
   <div class="actions">

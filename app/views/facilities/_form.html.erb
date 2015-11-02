@@ -16,10 +16,12 @@
       <h3 class="panel-title">Location</h3>
     </div>
     <div class="panel-body">
-      <div class="field">
-        <p><%= f.label :carrier %>:
-        <%= f.select :carrier_id, options_for_select(@carriers.map{ |s| [s.name, s.id] }, params[:carrier_id]) %></p>
-      </div>
+      <% if current_user.try(:admin?) %>
+        <div class="field">
+          <p><%= f.label :carrier %>:
+          <%= f.select :carrier_id, options_for_select(@carriers.map{ |s| [s.name, s.id] }, params[:carrier_id]) %></p>
+        </div>
+      <% end %>
       <div class="field">
         <p><%= f.label :address %>:
         <%= f.text_field :address %></p>

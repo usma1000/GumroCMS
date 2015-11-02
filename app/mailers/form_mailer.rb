@@ -6,7 +6,7 @@ class FormMailer < ApplicationMailer
     @carrierpath = carrierpath
     @subject = "New Carrier - " + @carriername
 
-    mail(to: 'info@gumroandassociates.com', subject: @subject)
+    mail(to: 'anandu@gumroandassociates.com', subject: @subject)
   end
 
   def facility_email(facilitycity, facilitypath)
@@ -14,7 +14,7 @@ class FormMailer < ApplicationMailer
     @facilitypath = facilitypath
     @subject = "New Facility - " + @facilitycity
 
-    mail(to: 'info@gumroandassociates.com', subject: @subject)
+    mail(to: 'anandu@gumroandassociates.com', subject: @subject)
   end
 
   def contact_email(contact)
@@ -22,6 +22,6 @@ class FormMailer < ApplicationMailer
     @contactpath = contact.id
     @subject = "New Contact - " + @contactname
 
-    mail(to: 'info@gumroandassociates.com', subject: @subject)
+    mail(to: 'anandu@gumroandassociates.com', subject: @subject)
   end
 end

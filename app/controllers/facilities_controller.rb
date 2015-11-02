@@ -30,12 +30,13 @@ class FacilitiesController < ApplicationController
   # POST /facilities.json
   def create
     @facility = Facility.new(facility_params)
+    if !current_user.admin?
+      @facility.carrier_id = Carrier.find_by_name(current_user.carrier_name).id
+    end
 
     respond_to do |format|
       if @facility.save
-        if !user_signed_in?
-          FormMailer.facility_email(@facility.city, @facility.id).deliver
-        end
+        FormMailer.facility_email(@facility.city, @facility.id).deliver
         format.html { redirect_to :root, notice: 'Facility was successfully created.' }
         format.json { render :root, status: :created, location: @facility }
       else

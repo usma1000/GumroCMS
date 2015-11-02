@@ -48,9 +48,11 @@ class CarriersController < ApplicationController
 
     respond_to do |format|
       if @carrier.save
-        if !user_signed_in?
-          FormMailer.carrier_email(@carrier.name, @carrier.id).deliver
+        if !current_user.admin?
+          current_user.update_attribute :carrier_name, @carrier.name
         end
+
+        FormMailer.carrier_email(@carrier.name, @carrier.id).deliver
         format.html { redirect_to :root, notice: 'Carrier was successfully created.' }
         format.json { render :root, status: :created, location: @carrier }
       else

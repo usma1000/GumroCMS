@@ -2,7 +2,14 @@
 <h1 class="text-center">Gumro &amp; Associates</h1>
 <h3 class="text-center">Carrier Management System</h3>
 
-<%= render 'buttonpanels' %>
+<% if user_signed_in? %>
+  <%= render 'buttonpanels' %>
+<% else %>
+  <br><p class="lead text-center">Please
+    <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success' %> or
+    <%= link_to 'Log In', new_user_session_path, class: 'btn btn-primary' %>
+    to proceed.</p>
+<% end %>
 
 <% if current_user.try(:admin?) %>
   <div class="row">
