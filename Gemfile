@@ -13,7 +13,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootswatch-rails'
 gem 'autoprefixer-rails'
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'ransack', '~> 1.7.0'
 gem 'closure_tree'
 
