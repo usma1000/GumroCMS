@@ -4,7 +4,7 @@
 
   <div class="col-md-4">
     <a class="buttonpanel-link" href="<%= new_carrier_path %>">
-      <div class="buttonpanel buttonpanel-blue">
+      <div class="buttonpanel buttonpanel-blue <%= 'buttonpanel-highlight' if current_user.carrier_name == nil and !current_user.admin %>">
         <span>
           <h3>Step 1: Carrier Registration</h3>
         </span>
