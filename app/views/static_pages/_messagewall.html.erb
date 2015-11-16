@@ -6,14 +6,15 @@
       <h4>Message Wall</h4>
     </div>
     <div class="col-sm-6">
-      <%= link_to new_message_path, class: 'btn btn-success pull-right' do %>
+      <%= link_to new_message_path, remote: true, class: 'btn btn-success pull-right' do %>
         <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> New Message
       <% end %>
     </div>
+    <div id="messages-form" style="display:none;"></div>
   </div>
 </div>
 
-<div class="well">
+<div class="well" id="messages-render">
 <%= render @messages.limit(10) %>
 </div>
 <%= link_to 'See All Messages', messages_path %>

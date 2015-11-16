@@ -12,10 +12,9 @@
   <% end %>
 
   <div class="form-group">
-    <strong>What do you want to say?</strong>
+    <label>What do you want to say?</label>
     <%= f.text_area :body, class: 'form-control', required: true %>
   </div>
 
-  <%= f.submit class: 'btn btn-primary' %>
-  <%= link_to 'Back', root_path, class: 'btn btn-default' %>
+  <%= f.submit class: 'btn btn-primary', remote: true %>
 <% end %>
