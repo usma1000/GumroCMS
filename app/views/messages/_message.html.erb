@@ -1,11 +1,13 @@
-<p class="text-muted">
-  Created by:
-  <strong><%= message.user.email %></strong>, posted
-  <%= time_ago_in_words(message.created_at) %> ago.
-  <!-- delete button. show only to user who posted the message -->
-  <% if message.user_id == current_user.id %>
-    <%= link_to 'Delete', message, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this message?' }, class: 'text-danger' %>
-  <% end %>
-</p>
+<div>
+  <p class="text-muted">
+    Created by:
+    <strong><%= message.user.email %></strong>, posted
+    <%= time_ago_in_words(message.created_at) %> ago.
+    <!-- delete button. show only to user who posted the message -->
+    <% if message.user_id == current_user.id %>
+      <%= link_to 'Delete', message, method: :delete, data: { confirm: 'Woah! Careful, buddy. You sure you wanna delete this message?' }, :remote => true, class: 'text-danger delete-message' %>
+    <% end %>
+  </p>
 
-<p><%= message.body %></p>
+  <p><%= message.body %></p>
+</div>
