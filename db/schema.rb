@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102175506) do
+ActiveRecord::Schema.define(version: 20151214145449) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20151102175506) do
     t.boolean  "independant_contractors"
     t.boolean  "company_drivers"
     t.string   "ratio_independant_company"
+    t.integer  "size"
   end
 
   add_index "facilities", ["carrier_id"], name: "index_facilities_on_carrier_id"
