@@ -21,7 +21,7 @@
     <%= f.text_field :phone, :class => 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :title %><br>
+    <%= f.label :title, "Job Title" %><br>
     <%= f.text_field :title, :class => 'form-control' %>
   </div>
   <% if current_user.try(:admin?) %>

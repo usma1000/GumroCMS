@@ -14,22 +14,26 @@
     </div>
     <div class="panel-body">
       <% if current_user.try(:admin?) %>
-        <div class="field">
+        <div class="form_control">
           <p><%= f.label :carrier %>:
           <%= f.select :carrier_id, options_for_select(@carriers.map{ |s| [s.name, s.id] }, params[:carrier_id]) %></p>
         </div>
       <% end %>
-      <div class="field">
+      <div class="form_control">
         <p><%= f.label :address %>:
         <%= f.text_field :address %></p>
       </div>
-      <div class="field">
+      <div class="form_control">
         <p><%= f.label :city %>:
         <%= f.text_field :city %></p>
       </div>
-      <div class="field">
+      <div class="form_control">
         <p><%= f.label :state %>:
         <%= f.text_field :state %></p>
+      </div>
+      <div class="form_control">
+        <p><%= f.label :size, "Size (square feet):" %>
+        <%= f.text_field :size %></p>
       </div>
     </div>
   </div>
@@ -39,39 +43,43 @@
       <h3 class="panel-title">Facility</h3>
     </div>
     <div class="panel-body">
-      <div class="field">
-        <p><%= f.label :size %> (square feet):
-        <%= f.text_field :size %></p>
+      <div class="form_control">
+        <%= f.check_box :has_security %>
+        <%= f.label :has_security %>
       </div>
-      <div class="field">
-        <%= f.check_box :has_security %> <strong>Has Security</strong>
+      <div class="form_control">
+        <%= f.check_box :has_CCTV %>
+        <%= f.label :has_CCTV %>
       </div>
-      <div class="field">
-        <%= f.check_box :has_CCTV %> <strong>Has CCTV</strong>
+      <div class="form_control">
+        <%= f.check_box :has_fence %>
+        <%= f.label :has_fence %>
       </div>
-      <div class="field">
-        <%= f.check_box :has_fence %> <strong>Has Fence</strong>
+      <div class="form_control">
+        <%= f.check_box :has_sprinklers %>
+        <%= f.label :has_sprinklers %>
       </div>
-      <div class="field">
-        <%= f.check_box :has_sprinklers %> <strong>Has Sprinklers</strong>
+      <div class="form_control">
+        <%= f.check_box :has_fire_alarm %>
+        <%= f.label :has_fire_alarm %>
       </div>
-      <div class="field">
-        <%= f.check_box :has_fire_alarm %> <strong>Has Fire Alarm</strong>
+      <div class="form_control">
+        <%= f.check_box :has_burglar_alarm %>
+        <%= f.label :has_burglar_alarm %>
       </div>
-      <div class="field">
-        <%= f.check_box :has_burglar_alarm %> <strong>Has Burglar Alarm</strong>
+      <div class="form_control">
+        <%= f.check_box :has_drop_yard %>
+        <%= f.label :has_drop_yard %>
       </div>
-      <div class="field">
-        <%= f.check_box :has_drop_yard %> <strong>Has Drop Yard</strong>
+      <div class="form_control">
+        <%= f.check_box :separate_caged_area_for_gas_tanks %>
+        <%= f.label :separate_caged_area_for_gas_tanks %>
       </div>
-      <div class="field">
-        <%= f.check_box :separate_caged_area_for_gas_tanks %> <strong>Separate caged area for gas tanks</strong>
-      </div>
-      <div class="field">
+      <div class="form_control">
         <%= f.label :terminal_door_count %><br>
         <%= f.number_field :terminal_door_count %>
       </div>
-      <div class="field">
+      <div class="form_control">
         <%= f.label :hours_of_operation %><br>
         <%= f.text_field :hours_of_operation %>
       </div>
@@ -83,16 +91,19 @@
       <h3 class="panel-title">Equipment</h3>
     </div>
     <div class="panel-body">
-      <div class="field">
-        <%= f.check_box :has_GPS %> <strong>Has GPS</strong>
+      <div class="form_control">
+        <%= f.check_box :has_GPS %>
+        <%= f.label :has_GPS %>
       </div>
-      <div class="field">
-        <%= f.check_box :has_alternate_fuel %> <strong>Has Alternate Fuel</strong>
+      <div class="form_control">
+        <%= f.check_box :has_alternate_fuel %>
+        <%= f.label :has_alternate_fuel %>
       </div>
-      <div class="field">
-        <%= f.check_box :has_standard_equipment_types %> <strong>Has Standard Equipment Types</strong>
+      <div class="form_control">
+        <%= f.check_box :has_standard_equipment_types %>
+        <%= f.label :has_standard_equipment_types %>
       </div>
-      <div class="field">
+      <div class="form_control">
         <%= f.label :average_equipment_age %> in years<br>
         <%= f.number_field :average_equipment_age %>
       </div>
@@ -104,30 +115,36 @@
       <h3 class="panel-title">Drivers</h3>
     </div>
     <div class="panel-body">
-      <div class="field">
-        <%= f.check_box :drivers_are_screened %> <strong>Drivers Are Screened</strong>
+      <div class="form_control">
+        <%= f.check_box :drivers_are_screened %>
+        <%= f.label :drivers_are_screened %>
       </div>
-      <div class="field">
-        <%= f.check_box :has_high_driver_turnover %> <strong>Has High Driver Turnover</strong>
+      <div class="form_control">
+        <%= f.check_box :has_high_driver_turnover %>
+        <%= f.label :has_high_driver_turnover %>
       </div>
-      <div class="field">
-        <%= f.check_box :holds_driver_training %> <strong>Holds Driver Training</strong>
+      <div class="form_control">
+        <%= f.check_box :holds_driver_training %>
+        <%= f.label :holds_driver_training %>
       </div>
-      <div class="field">
-        <%= f.check_box :driver_scan %> <strong>Driver Scanning Capabilities</strong>
+      <div class="form_control">
+        <%= f.check_box :driver_scan %>
+        <%= f.label :driver_scan, "Driver scanning capabilities?" %>
       </div>
-      <div class="field">
-        <%= f.check_box :independant_contractors %> <strong>Have Independant Contractors?</strong>
+      <div class="form_control">
+        <%= f.check_box :independant_contractors %>
+        <%= f.label :independant_contractors, "Have independant contractors?" %>
       </div>
-      <div class="field">
-        <%= f.check_box :company_drivers %> <strong>Have Company Drivers?</strong>
+      <div class="form_control">
+        <%= f.check_box :company_drivers %>
+        <%= f.label :company_drivers, "Have company drivers?" %>
       </div>
-      <div class="field">
-        <strong>Independant to Company Driver Ratio</strong><br>
+      <div class="form_control">
+        <%= f.label :ratio_independant_company, "Independant to company driver ratio" %> <br>
         <%= f.text_field :ratio_independant_company %>
       </div>
-      <div class="field">
-        <%= f.label :average_theft_rate %> %<br>
+      <div class="form_control">
+        <%= f.label :average_theft_rate %> <br>
         <%= f.number_field :average_theft_rate %>
       </div>
     </div>
@@ -138,32 +155,32 @@
       <h3 class="panel-title">Vehicle Counts</h3>
     </div>
     <div class="panel-body">
-      <div class="field">
-        <strong>24'</strong><br>
+      <div class="form_control">
+        24'<br>
         <%= f.number_field :vehicle_count_24 %>
       </div>
-      <div class="field">
-        <strong>26'</strong><br>
+      <div class="form_control">
+        26'<br>
         <%= f.number_field :vehicle_count_26 %>
       </div>
-      <div class="field">
-        <strong>48'</strong><br>
+      <div class="form_control">
+        48'<br>
         <%= f.number_field :vehicle_count_48 %>
       </div>
-      <div class="field">
-        <strong>53'</strong><br>
+      <div class="form_control">
+        53'<br>
         <%= f.number_field :vehicle_count_53 %>
       </div>
-      <div class="field">
-        <strong>Sprinter Vans</strong><br>
+      <div class="form_control">
+        Sprinter Vans<br>
         <%= f.number_field :vehicle_count_sprinter_vans %>
       </div>
-      <div class="field">
-        <strong>Flat Beds</strong><br>
+      <div class="form_control">
+        Flat Beds<br>
         <%= f.number_field :vehicle_count_flat_beds %>
       </div>
-      <div class="field">
-        <strong>Reefers</strong><br>
+      <div class="form_control">
+        Reefers<br>
         <%= f.number_field :vehicle_count_reefers %>
       </div>
     </div>
