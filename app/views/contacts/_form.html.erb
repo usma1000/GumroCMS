@@ -27,7 +27,7 @@
   <% if current_user.try(:admin?) %>
     <div class="form-group">
       <%= f.label :carrier %><br>
-      <%= f.select :carrier_id, options_for_select(@carriers.map{ |s| [s.name, s.id] }, params[:carrier_id]), :class => 'form-control' %>
+      <%= f.select :carrier_id, options_for_select(@carriers.map{ |s| [s.name, s.id] }, params[:carrier_id]), include_blank: 'Select a carrier', :class => 'form-control' %>
     </div>
   <% end %>
   <div class="form-group">
