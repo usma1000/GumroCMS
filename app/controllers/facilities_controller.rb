@@ -29,6 +29,7 @@ class FacilitiesController < ApplicationController
   # POST /facilities
   # POST /facilities.json
   def create
+    @carriers = Carrier.all
     @facility = Facility.new(facility_params)
     if !current_user.admin?
       @facility.carrier_id = Carrier.find_by_name(current_user.carrier_name).id

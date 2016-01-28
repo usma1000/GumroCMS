@@ -36,6 +36,7 @@ class ContactsController < ApplicationController
   # POST /contacts
   # POST /contacts.json
   def create
+    @carriers = Carrier.all
     @contact = Contact.new(contact_params)
     if !current_user.admin?
       @contact.carrier_id = Carrier.find_by_name(current_user.carrier_name).id
