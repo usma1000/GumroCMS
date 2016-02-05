@@ -53,7 +53,7 @@ class CarriersController < ApplicationController
         end
 
         FormMailer.carrier_email(@carrier.name, @carrier.id).deliver
-        format.html { redirect_to :root, notice: 'Carrier was successfully created.' }
+        format.html { redirect_to :root, notice: 'Thank you for registering! We will contact you for future opportunities.' }
         format.json { render :root, status: :created, location: @carrier }
       else
         format.html { render :new }

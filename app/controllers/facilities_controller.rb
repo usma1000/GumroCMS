@@ -38,7 +38,7 @@ class FacilitiesController < ApplicationController
     respond_to do |format|
       if @facility.save
         FormMailer.facility_email(@facility.city, @facility.id).deliver
-        format.html { redirect_to :root, notice: 'Facility was successfully created.' }
+        format.html { redirect_to :root, notice: 'Thank you for registering!' }
         format.json { render :root, status: :created, location: @facility }
       else
         format.html { render :new }
