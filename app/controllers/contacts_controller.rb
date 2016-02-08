@@ -45,7 +45,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.save
         FormMailer.contact_email(@contact).deliver
-        format.html { redirect_to :root, notice: 'Contact was successfully created.' }
+        format.html { redirect_to :root, notice: 'Thank you for registering!' }
         format.json { render :root, status: :created, location: @contact }
       else
         format.html { render :new }
