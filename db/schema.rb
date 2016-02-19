@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214145449) do
+ActiveRecord::Schema.define(version: 20160219202420) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20151214145449) do
     t.boolean  "participate_in_recycling_programs"
     t.boolean  "scanning"
     t.string   "scanning_software"
+    t.string   "final_mile_or_linehaul"
   end
 
   create_table "comments", force: :cascade do |t|

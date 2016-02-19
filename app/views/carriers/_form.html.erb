@@ -17,6 +17,11 @@
         <%= f.label :name %><br>
         <%= f.text_field :name %>
       </div>
+      <div class="field">
+        <%= f.radio_button :final_mile_or_linehaul, "Final Mile" %>Final Mile<br>
+        <%= f.radio_button :final_mile_or_linehaul, "Linehaul" %>Linehaul<br>
+        <%= f.radio_button :final_mile_or_linehaul, "Final Mile and Linehaul" %>Final Mile and Linehaul<br>
+      </div>
     </div>
   </div>
 

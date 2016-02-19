@@ -21,6 +21,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Capabilities</th>
       <th>Experience in Retail</th>
       <th>Comments</th>
       <th>Edit / Delete</th>
@@ -35,6 +36,7 @@
             - <i class="glyphicon glyphicon-file" aria-hidden="true"></i>
           <% end %>
         </td>
+        <td><%= carrier.final_mile_or_linehaul %></td>
         <td><%= boolean_yesno(carrier.exp_in_retail) %></td>
         <td><%= carrier.comments %></td>
         <td>
