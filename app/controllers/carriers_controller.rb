@@ -55,6 +55,10 @@ class CarriersController < ApplicationController
         FormMailer.carrier_email(@carrier.name, @carrier.id).deliver
         format.html { redirect_to :root, notice: 'Thank you for registering! We will contact you for future opportunities.' }
         format.json { render :root, status: :created, location: @carrier }
+
+        rescue Net::SMTPAuthenticationError, Net::SMTPServerBusy, Net::SMTPSyntaxError, Net::SMTPFatalError, Net::SMTPUnknownError => e
+          flash[:warning] = "User created, but there was a problem sending the email."
+        end
       else
         format.html { render :new }
         format.json { render json: @carrier.errors, status: :unprocessable_entity }
