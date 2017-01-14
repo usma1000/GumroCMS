@@ -52,7 +52,7 @@ class CarriersController < ApplicationController
           current_user.update_attribute :carrier_name, @carrier.name
         end
 
-        # FormMailer.carrier_email(@carrier.name, @carrier.id).deliver
+        FormMailer.carrier_email(@carrier.name, @carrier.id).deliver
         format.html { redirect_to :root, notice: 'Thank you for registering! We will contact you for future opportunities.' }
         format.json { render :root, status: :created, location: @carrier }
       else
